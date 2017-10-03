@@ -73,6 +73,21 @@ def find_cool(array)
   new_array
 end
 
-def organize_schools(array)
-  array.sort
+def organize_schoolz(school_hash)
+  organized_hash = {}
+  school_hash.each do |school_name, location_hash|
+    location = location_hash[:location]
+    organized_hash[location] = []
+  end
+  organized_hash.each do |schools_by_location|
+    schools_by_location.each do |location_key, array_of_schools|
+      school_hash.each do |school_name, location_hash|
+        location = location_hash[:location]
+        if location_key == location
+          organized_hash[location_key] << school_name
+        end
+      end
+    end
+  end
+  organized_hash
 end
