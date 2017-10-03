@@ -73,7 +73,7 @@ def find_cool(array)
   new_array
 end
 
-def organize_schoolz(school_hash)
+def organize_schools(school_hash)
   organized_hash = {}
   school_hash.each do |school_name, location_hash|
     location = location_hash[:location]
